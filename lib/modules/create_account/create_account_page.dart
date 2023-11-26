@@ -1,3 +1,4 @@
+import 'package:appoint_ease/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -191,7 +192,9 @@ class CreateAccountPage extends StatelessWidget {
                         width: double.infinity,
                         height: 44,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.toNamed(AppRoutes.verifyCodePage);
+                          },
                           child: Text("Sign Up"),
                           style: TextButton.styleFrom(
                             textStyle: TextStyle(
@@ -201,6 +204,33 @@ class CreateAccountPage extends StatelessWidget {
                             backgroundColor: ThemeColor.primary,
                           ),
                         )),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: RichText(
+                          text: TextSpan(
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
+                              children: [
+                            TextSpan(
+                              text: "Already have an account? ",
+                              style: TextStyle(
+                                color: ThemeColor.darkGrey,
+                              ),
+                            ),
+                            TextSpan(
+                              text: "Sign in",
+                              style: TextStyle(
+                                  color: ThemeColor.primary,
+                                  decoration: TextDecoration.underline),
+                            )
+                          ])),
+                    ),
                   ],
                 ),
               ),

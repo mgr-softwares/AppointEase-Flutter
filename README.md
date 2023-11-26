@@ -1,4 +1,4 @@
-# appoint_ease
+# AppointEase
 
 A new Flutter project.
 
